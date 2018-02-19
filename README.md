@@ -30,7 +30,7 @@ npm install iamraphson/angularjs-ravepayment
         email="email"
         amount="amount"
         reference="reference"
-        metadata="metadata"
+        meta="metadata"
         callback="callback"
         close="close"
     ></rave-pay-button>
