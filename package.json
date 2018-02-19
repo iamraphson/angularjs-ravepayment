@@ -21,11 +21,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/iamraphson/angular-ravepayment/issues"
+    "url": "https://github.com/iamraphson/angularjs-ravepayment/issues"
   },
-  "homepage": "https://github.com/iamraphson/angular-ravepayment#readme",
+  "homepage": "https://github.com/iamraphson/angularjs-ravepayment#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iamraphson/angular-ravepayment.git"
+    "url": "git+https://github.com/iamraphson/angularjs-ravepayment.git"
   }
 }
