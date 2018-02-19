@@ -50,15 +50,12 @@ npm install iamraphson/angularjs-ravepayment
     raveApp.controller("RaveController", function($scope){
         $scope.amount = 1000 //Naira
 
-	    $scope.metadata = {
-		    custom_fields: [
-			    {
-				    display_name: "Phone Number",
-				    variable_name: "phone",
-				    value: "+23480010101010"
-			    }
-		    ]
-	    };
+	    $scope.metadata = [
+		   {
+		        metaname:‘flightid’,
+		        metavalue:‘93849-MK5000’
+           }
+		]
 
 	    $scope.computeReference = function() {
             let text = "";

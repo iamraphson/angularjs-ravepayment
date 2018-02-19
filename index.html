@@ -37,7 +37,7 @@
 
     raveApp.config(['$raveProvider', function ($raveProvider) {
         $raveProvider.config({
-            key: "FLWPUBK-XXXXXXXXXXXXXXXXXXXXXXXXXXXX-X",
+            key: "FLWPUBK-c59ee426f4c86db0eef5d6514cd2b187-X",
             isProduction: false
         })
     }])
@@ -45,15 +45,12 @@
     raveApp.controller("RaveController", function($scope){
         $scope.amount = 1000 //Naira
 
-	    $scope.metadata = {
-		    custom_fields: [
-			    {
-				    display_name: "Phone Number",
-				    variable_name: "phone",
-				    value: "+2348010101010"
-			    }
-		    ]
-	    };
+	    $scope.meta = [
+		    {
+			    metaname: "flightid",
+	            metavalue: "93849-MK5000"
+            }
+        ];
 
 	    $scope.computeReference = function() {
             let text = "";
