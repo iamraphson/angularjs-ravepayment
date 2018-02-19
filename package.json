@@ -1,0 +1,31 @@
+{
+  "name": "angularjs-ravepayment",
+  "version": "1.0.0",
+  "description": "This is a Angular 1.x library for implementing rave payment gateway",
+  "main": "dist/angular-paystack.min.js",
+  "keywords": [
+    "Javascript",
+    "Github",
+    "AngularJS",
+    "Angular 1.x",
+    "Open Source",
+    "Payments",
+    "Rave",
+    "Ravepayment",
+    "Flutterwave",
+    "Gateway"
+  ],
+  "author": "Ayeni Olusegun<nsegun5@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/iamraphson/angular-ravepayment/issues"
+  },
+  "homepage": "https://github.com/iamraphson/angular-ravepayment#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamraphson/angular-ravepayment.git"
+  }
+}
