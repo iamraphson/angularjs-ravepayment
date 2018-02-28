@@ -84,6 +84,17 @@ npm install angularjs-ravepayment --save
     })
 </script>
 ```
+
+# Notice
+
+**For complete payment security, kindly use our integrity checksum feature to hash all payment values before passing it to the front end for processing.**
+
+**Please see link to implement checksum: https://flutterwavedevelopers.readme.io/v1.0/docs/checksum**
+
+**Also ensure you verify all transactions before giving value to your customer.**
+
+**Please see link to verify transactions: https://flutterwavedevelopers.readme.io/v1.0/docs/status-check**
+
 [Usage](index.html)
 
 Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/v1.0/reference#introduction) for other available options you can add to the tag
