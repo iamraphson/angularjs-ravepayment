@@ -6,17 +6,21 @@ An Angular library for RavePay Payment Gateway.
 
 ### Get Started
 
-This AngularJS library provides a wrapper to add RavePay Payment to your AngularJS application
+This AngularJS library provides a wrapper to add RavePay Payment to your AngularJS 1.x applications
 
 ###Install
 
 ##### NPM
 ```
-npm install iamraphson/angularjs-ravepayment
+npm install angularjs-ravepayment --save
 ```
 
 ##### Javascript via CDN
 ```
+<!-- angular 1.x -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<!-- Angularjs-Ravepayment -->
+<script src="https://unpkg.com/angularjs-ravepayment/dist/angular-rave.min.js"></script>
 
 ```
 
