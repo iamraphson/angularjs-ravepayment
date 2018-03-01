@@ -37,6 +37,14 @@ npm install angularjs-ravepayment --save
         meta="metadata"
         callback="callback"
         close="close"
+        integrity_hash="integrityHash"
+        currency="customer.currency"
+        country="customer.country"
+        customer_firstname="customer.firstName"
+        customer_lastname="customer.lastName"
+        custom_title="website.title"
+        custom_description="website.description"
+        custom_logo="website.logo"
     ></rave-pay-button>
 </div>
 ```
@@ -53,6 +61,22 @@ npm install angularjs-ravepayment --save
 
     raveApp.controller("RaveController", function($scope){
         $scope.amount = 1000 //Naira
+        $scope.customer = {
+            firstName: 'Dara',
+            lastName: 'Obama'
+            currency: 'USD',
+            country: 'NG'
+        };
+
+        $scope.website = {
+            title: 'website name',
+            description: 'best ecommerce store',
+            logo: 'http://website.com/logo.png'
+        };
+
+        $scope.integrityHash = function() {
+            // retrieve value from server.
+        }
 
 	    $scope.metadata = [
 		   {
