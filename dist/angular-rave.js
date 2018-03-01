@@ -41,6 +41,7 @@
 }).directive('ravePayButton', ['$rave', function ($rave) {
   let raveDirective = {}
   raveDirective.restrict = 'E'
+  raveDirective.replace = 'true';
 
   raveDirective.template = function (element, attribute) {
     return `<button class="paystack-pay-button {{class}}">${attribute.text || 'Make Payment'}</button>`
