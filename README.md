@@ -62,9 +62,9 @@ npm install angularjs-ravepayment --save
     raveApp.controller("RaveController", function($scope){
         $scope.amount = 1000 //Naira
         $scope.customer = {
-            firstName: 'Dara',
-            lastName: 'Obama'
-            currency: 'USD',
+            firstName: 'Foo',
+            lastName: 'Bar'
+            currency: 'NGN',
             country: 'NG'
         };
 
@@ -97,7 +97,7 @@ npm install angularjs-ravepayment --save
 
 	    $scope.reference = $scope.computeReference();
 
-	    $scope.email = "nsegun5@gmail.com";
+	    $scope.email = "rave@flutterwave.com";
 	    $scope.callback = function (response) {
 		    console.log(response);
 	    };
