@@ -60,13 +60,14 @@
 	  customer_lastname: '=?',
 	  custom_title: '=?',
 	  custom_description: '=?',
-	  custom_logo: '=?'
+	  custom_logo: '=?',
+	  integrity_hash: '=?',
   }
 
   raveDirective.link = function (scope, element, attrs) {
     $rave.then(function () {
 	    element.bind('click', function () {
-		    window.getpaidSetup({
+		    var _opts = {
 			    customer_email: scope.email,
 			    amount: scope.amount,
 			    txref: scope.reference,
@@ -81,7 +82,11 @@
 			    custom_title: scope.custom_title || '',
 			    custom_description: scope.custom_description || '',
 			    custom_logo: scope.custom_logo
-		    })
+		    };
+		    if ( scope.integrity_hash != undefined && typeof( scope.integrity_hash ) == "string" ) {
+			_opts.integrity_hash = scope.integrity_hash;
+		    }
+		    window.getpaidSetup( _opts );
 	    });
     })
   }
