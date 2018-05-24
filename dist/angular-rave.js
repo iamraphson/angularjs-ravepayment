@@ -21,7 +21,7 @@
 		      }
 		    }
 		    script.src = (!defaultOptions.isProduction)
-							? 'http://flw-pms-dev.eu-west-1.elasticbeanstalk.com/flwv3-pug/getpaidx/api/flwpbf-inline.js'
+							? 'https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js'
 							: 'https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js'
 		    document.body.appendChild(script)
 		  }
