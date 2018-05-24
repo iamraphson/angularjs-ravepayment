@@ -28,6 +28,14 @@
             meta="metadata"
             callback="callback"
             close="close"
+            currency="customer.currency"
+            country="customer.country"
+            customer_firstname="customer.firstName"
+            customer_lastname="customer.lastName"
+            custom_title="website.title"
+            custom_description="website.description"
+            custom_logo="website.logo"
+            integrity_hash="integrityHash"
         ></rave-pay-button>
     </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
@@ -45,12 +53,29 @@
     raveApp.controller("RaveController", function($scope){
         $scope.amount = 1000 //Naira
 
+	    $scope.customer = {
+		    firstName: 'Ayeni',
+		    lastName: 'Olusegun',
+		    currency: 'NGN',
+		    country: 'NG'
+	    };
+
+	    $scope.website = {
+		    title: 'website name',
+		    description: 'best ecommerce store',
+		    logo: 'http://website.com/logo.png'
+	    };
+
 	    $scope.meta = [
 		    {
 			    metaname: "flightid",
 	            metavalue: "93849-MK5000"
             }
         ];
+
+	    $scope.integrityHash = function() {
+		    // retrieve value from server.
+	    }
 
 	    $scope.computeReference = function() {
             let text = "";
