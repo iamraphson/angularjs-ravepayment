@@ -6,17 +6,21 @@ An Angular library for RavePay Payment Gateway.
 
 ### Get Started
 
-This AngularJS library provides a wrapper to add RavePay Payment to your AngularJS application
+This AngularJS library provides a wrapper to add RavePay Payment to your AngularJS 1.x applications
 
 ###Install
 
 ##### NPM
 ```
-npm install iamraphson/angularjs-ravepayment
+npm install angularjs-ravepayment --save
 ```
 
 ##### Javascript via CDN
 ```
+<!-- angular 1.x -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+<!-- Angularjs-Ravepayment -->
+<script src="https://unpkg.com/angularjs-ravepayment/dist/angular-rave.min.js"></script>
 
 ```
 
@@ -33,6 +37,14 @@ npm install iamraphson/angularjs-ravepayment
         meta="metadata"
         callback="callback"
         close="close"
+        integrity_hash="integrityHash"
+        currency="customer.currency"
+        country="customer.country"
+        customer_firstname="customer.firstName"
+        customer_lastname="customer.lastName"
+        custom_title="website.title"
+        custom_description="website.description"
+        custom_logo="website.logo"
     ></rave-pay-button>
 </div>
 ```
@@ -49,6 +61,22 @@ npm install iamraphson/angularjs-ravepayment
 
     raveApp.controller("RaveController", function($scope){
         $scope.amount = 1000 //Naira
+        $scope.customer = {
+            firstName: 'Foo',
+            lastName: 'Bar'
+            currency: 'NGN',
+            country: 'NG'
+        };
+
+        $scope.website = {
+            title: 'website name',
+            description: 'best ecommerce store',
+            logo: 'http://website.com/logo.png'
+        };
+
+        $scope.integrityHash = function() {
+            // retrieve value from server.
+        }
 
 	    $scope.metadata = [
 		   {
@@ -69,7 +97,7 @@ npm install iamraphson/angularjs-ravepayment
 
 	    $scope.reference = $scope.computeReference();
 
-	    $scope.email = "nsegun5@gmail.com";
+	    $scope.email = "rave@flutterwave.com";
 	    $scope.callback = function (response) {
 		    console.log(response);
 	    };
@@ -80,6 +108,17 @@ npm install iamraphson/angularjs-ravepayment
     })
 </script>
 ```
+
+# Notice
+
+**For complete payment security, kindly use our integrity checksum feature to hash all payment values before passing it to the front end for processing.**
+
+**Please see link to implement checksum: https://flutterwavedevelopers.readme.io/v1.0/docs/checksum**
+
+**Also ensure you verify all transactions before giving value to your customer.**
+
+**Please see link to verify transactions: https://flutterwavedevelopers.readme.io/v1.0/docs/status-check**
+
 [Usage](index.html)
 
 Please checkout [Rave Documentation](https://flutterwavedevelopers.readme.io/v1.0/reference#introduction) for other available options you can add to the tag
