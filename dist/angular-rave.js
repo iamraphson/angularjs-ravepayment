@@ -60,7 +60,8 @@
 	  customer_lastname: '=?',
 	  custom_title: '=?',
 	  custom_description: '=?',
-	  custom_logo: '=?'
+	  custom_logo: '=?',
+	  redirectUrl: '=?'
   }
 
   raveDirective.link = function (scope, element, attrs) {
@@ -80,7 +81,8 @@
 			    customer_lastname: scope.customer_lastname || '',
 			    custom_title: scope.custom_title || '',
 			    custom_description: scope.custom_description || '',
-			    custom_logo: scope.custom_logo
+			    custom_logo: scope.custom_logo,
+			    redirect_url: scope.redirectUrl || ''
 		    })
 	    });
     })
