@@ -21,7 +21,7 @@
 		      }
 		    }
 		    script.src = (!defaultOptions.isProduction)
-							? 'http://flw-pms-dev.eu-west-1.elasticbeanstalk.com/flwv3-pug/getpaidx/api/flwpbf-inline.js'
+							? 'https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js'
 							: 'https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js'
 		    document.body.appendChild(script)
 		  }
@@ -43,7 +43,7 @@
   raveDirective.restrict = 'E'
 
   raveDirective.template = function (element, attribute) {
-    return `<button class="paystack-pay-button {{class}}">${attribute.text || 'Make Payment'}</button>`
+    return `<button class="rave-pay-button {{class}}">${attribute.text || 'Make Payment'}</button>`
   }
 
   raveDirective.scope = {
@@ -58,6 +58,7 @@
 	  country: '=?',
 	  customer_firstname: '=?',
 	  customer_lastname: '=?',
+	  customer_phone: '=?',
 	  custom_title: '=?',
 	  custom_description: '=?',
 	  custom_logo: '=?',
@@ -79,6 +80,7 @@
 			    country: scope.country || 'NG',
 			    customer_firstname: scope.customer_firstname || '',
 			    customer_lastname: scope.customer_lastname || '',
+			    customer_phone: scope.customer_phone || '',
 			    custom_title: scope.custom_title || '',
 			    custom_description: scope.custom_description || '',
 			    custom_logo: scope.custom_logo,
