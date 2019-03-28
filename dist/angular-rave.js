@@ -62,7 +62,8 @@
 	  custom_title: '=?',
 	  custom_description: '=?',
 	  custom_logo: '=?',
-	  redirectUrl: '=?'
+	  redirectUrl: '=?',
+	  inlineFrame: '=?'
   }
 
   raveDirective.link = function (scope, element, attrs) {
@@ -84,7 +85,8 @@
 			    custom_title: scope.custom_title || '',
 			    custom_description: scope.custom_description || '',
 			    custom_logo: scope.custom_logo,
-			    redirect_url: scope.redirectUrl || ''
+			    redirect_url: scope.redirectUrl || '',
+			    force_inline_iframe: scope.inlineFrame || ''
 		    })
 	    });
     })
