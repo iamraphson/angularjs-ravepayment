@@ -41,34 +41,35 @@
 }).directive('ravePayButton', ['$rave', function ($rave) {
   let raveDirective = {}
   raveDirective.restrict = 'E'
-  raveDirective.replace = 'true';
 
   raveDirective.template = function (element, attribute) {
-    return `<button class="paystack-pay-button {{class}}">${attribute.text || 'Make Payment'}</button>`
+    return `<button class="rave-pay-button {{class}}">${attribute.text || 'Make Payment'}</button>`
   }
 
   raveDirective.scope = {
-  	class: '@',
-  	email: '=',
-  	amount: '=',
-  	reference: '=',
-  	callback: '=',
-  	close: '=',
-  	meta: '=?',
-  	currency: '=?',
-  	country: '=?',
-  	customerFirstname: '=?',
-  	customerLastname: '=?',
-  	customTitle: '=?',
-  	customDescription: '=?',
-  	customLogo: '=?',
-  	integrityHash: '=?',
+		class: '@',
+	  email: '=',
+	  amount: '=',
+	  reference: '=',
+	  callback: '=',
+	  close: '=',
+	  meta: '=?',
+	  currency: '=?',
+	  country: '=?',
+	  customer_firstname: '=?',
+	  customer_lastname: '=?',
+	  customer_phone: '=?',
+	  custom_title: '=?',
+	  custom_description: '=?',
+	  custom_logo: '=?',
+	  redirectUrl: '=?',
+	  inlineFrame: '=?'
   }
 
   raveDirective.link = function (scope, element, attrs) {
     $rave.then(function () {
 	    element.bind('click', function () {
-		    var _opts = {
+		    window.getpaidSetup({
 			    customer_email: scope.email,
 			    amount: scope.amount,
 			    txref: scope.reference,
@@ -78,17 +79,15 @@
 			    meta: scope.meta,
 			    currency: scope.currency || 'NGN',
 			    country: scope.country || 'NG',
-			    customer_firstname: scope.customerFirstname || '',
-			    customer_lastname: scope.customerLastname || '',
-			    custom_title: scope.customTitle || '',
-			    custom_description: scope.customDescription || '',
-			    custom_logo: scope.customLogo
-		    };
-
-		    if ( scope.integrityHash != undefined && typeof( scope.integrityHash ) == "string" ) {
-		    	_opts.integrityHash = scope.integrityHash;
-		    }
-		    window.getpaidSetup( _opts );
+			    customer_firstname: scope.customer_firstname || '',
+			    customer_lastname: scope.customer_lastname || '',
+			    customer_phone: scope.customer_phone || '',
+			    custom_title: scope.custom_title || '',
+			    custom_description: scope.custom_description || '',
+			    custom_logo: scope.custom_logo,
+			    redirect_url: scope.redirectUrl || '',
+			    force_inline_iframe: scope.inlineFrame || ''
+		    })
 	    });
     })
   }
